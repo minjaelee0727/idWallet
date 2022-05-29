@@ -113,7 +113,7 @@ func (b *blockchain) AddBlock(cr constant.Credential, w *wallet.IdWallet) {
 	}
 	cd.Id = utils.Hash(cd)
 	hashedCredential := utils.Hash(cr)
-	cd.Signature = wallet.MakeSignature(hashedCredential, w)
+	cd.Signature = wallet.MakeSignature(w, hashedCredential)
 	block.Credential = *cd
 	persistBlock(block)
 	b.NewestHash = block.Hash
@@ -124,6 +124,7 @@ func (b *blockchain) AddBlock(cr constant.Credential, w *wallet.IdWallet) {
 
 func (b *blockchain) AddGenesis() {
 	block := createBlock(b.NewestHash, b.Height+1, getDifficulty(b))
+	persistBlock(block)
 	b.NewestHash = block.Hash
 	b.Height = block.Height
 	b.CurrentDifficulty = block.Difficulty

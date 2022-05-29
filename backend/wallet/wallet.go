@@ -63,7 +63,7 @@ func restoreBigInts(payload string) (*big.Int, *big.Int, error) {
 	return &bigA, &bigB, nil
 }
 
-func MakeSignature(hashedCredential string, w *IdWallet) string {
+func MakeSignature(w *IdWallet, hashedCredential string) string {
 	payloadByte, err := hex.DecodeString(hashedCredential)
 	utils.HandleErr(err)
 	privKey, _ := decode(w.PrivateKey, w.PublicKey)
@@ -73,6 +73,8 @@ func MakeSignature(hashedCredential string, w *IdWallet) string {
 	return fmt.Sprintf("%x", signBytes)
 }
 
+// Signature from Block
+// Others from input
 func VerifySignature(signature, publicKeyStr, hashedCredential string) bool {
 	r, s, err := restoreBigInts(signature)
 	utils.HandleErr(err)

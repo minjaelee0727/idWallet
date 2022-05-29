@@ -6,5 +6,7 @@ type Credential struct {
 }
 
 type VerifyData struct {
-	HashedCredential, Signature, PublicKey string
+	HashedCredential string
+	Signature        string
+	PublicKey        string
 }
