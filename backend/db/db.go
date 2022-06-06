@@ -8,6 +8,7 @@ import (
 var db *bolt.DB
 
 const (
+	dbName       = "blockchainDB"
 	dataBucket   = "data"
 	blocksBucket = "blocks"
 	checkpoint   = "checkpoint"
@@ -15,7 +16,7 @@ const (
 
 func DB() {
 	if db == nil {
-		dbPointer, err := bolt.Open("blockchainDB", 0600, nil)
+		dbPointer, err := bolt.Open(dbName, 0600, nil)
 		db = dbPointer
 		utils.HandleErr(err)
 		err = db.Update(func(t *bolt.Tx) error {

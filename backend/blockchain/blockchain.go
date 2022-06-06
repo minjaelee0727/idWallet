@@ -39,9 +39,8 @@ type CredentialOnBlock struct {
 	Id        string `json:"CdId"`        // hash value of this credential
 	Timestamp int    `json:"CdTimestamp"` // just for hash
 	Active    bool   `json:"CdActive"`    // check whether it is active
-	Signature string `json:"CdSignature"` // Block will save signature only to confirm that idWallet has not been changed
-	// Only user have personal info in their idWallet
-	// Signature is created by Credential + private key
+	Data      string `json:"CdData"`	
+	Signature string `json:"CdSignature"`
 }
 
 var b *blockchain

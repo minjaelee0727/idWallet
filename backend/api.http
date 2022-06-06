@@ -7,7 +7,24 @@ POST http://localhost:8080/register
 }
 
 ###
-GET http://localhost:8080/verify
+GET http://localhost:8080/verify/sin
+// x = 17
+// v = 7
+// g = 2541
+// y = 2541 ^ 17 = 
+// t = 2541 ^ 7 = 
+// c = 
+// r = v - cx = 
+
+{
+    "Y": "",
+    "T": "",
+    "R": "",
+    "C": "",
+}
 
 ###
 GET http://localhost:8080/blocks
+
+###
+POST http://localhost:8080/request/g

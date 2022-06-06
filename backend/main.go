@@ -1,12 +1,15 @@
 package main
 
-import (
-	"github.com/minjaelee0727/idWallet/backend/db"
-	"github.com/minjaelee0727/idWallet/backend/rest"
+import "math"
+
+const (
+	restPort int = 8080
+	adultAge int = 19
 )
 
 func main() {
-	defer db.CloseDB()
-	db.DB()
-	rest.StartService()
+	// defer db.CloseDB()
+	// db.DB()
+	// rest.Start(restPort)
+	print(math.Pow(2541, 17))
 }

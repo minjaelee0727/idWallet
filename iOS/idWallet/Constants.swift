@@ -16,7 +16,7 @@ public var screenHeight: CGFloat {
 }
 
 enum Constants {
-    static let registerURL = URL(string: "http://127.0.0.1:8080/register")
+    static let registerURL = URL(string: "http://0.0.0.0:8080/register")
     static let publicKey: String = "k_publicKey"
     static let secretKey: String = "k_secretKey"
 }
