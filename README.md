@@ -1,5 +1,7 @@
 # idWallet
 
+This README is written by gpt-4o. 
+
 ## Overview
 
 **idWallet** is a decentralized identity wallet system enabling users to store, present, and verify digital credentials securely. It uses **blockchain anchoring** to ensure the integrity and traceability of credentials, all without relying on zero-knowledge proof schemes.
@@ -59,7 +61,6 @@ idWallet/
 
 ---
 
-## 🚀 Getting Started
 
 ### 🧠 Backend (Go)
 
@@ -69,44 +70,12 @@ idWallet/
 - SQLite3
 - Access to a blockchain RPC endpoint (e.g., Infura, Ganache)
 
-#### Setup
-
-```bash
-cd backend
-go mod tidy
-go run .
-```
-
-#### Environment Variables
-
-You can set a `.env` file or pass via shell:
-
-```bash
-BLOCKCHAIN_RPC_URL=https://your-node
-PRIVATE_KEY=your_private_key
-```
-
-Server runs on `http://localhost:8080` by default.
-
----
-
 ### 📱 iOS App (Swift)
 
 #### Prerequisites
 
 - Xcode 12+
 - iOS 14+ device or simulator
-
-#### Setup
-
-```bash
-cd iOS
-open idWallet.xcodeproj
-```
-
-- Make sure `BASE_URL` for backend API is set to match your local or deployed server.
-- Build and run on a simulator or real device.
-
 ---
 
 ## 🔌 REST API
@@ -156,33 +125,3 @@ Verifies credential by recomputing and comparing the hash.
    - Client sends credential
    - Backend rehashes and checks blockchain state
    - Responds with `valid: true/false`
-
----
-
-## 📜 License
-
-MIT License. See the [LICENSE](LICENSE) file.
-
----
-
-## 🛠️ Roadmap
-
-- [ ] Add smart contract for issuer registry
-- [ ] DID-compliant credential schema
-- [ ] Credential revocation list support
-- [ ] Offline mode for iOS with delayed sync
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request. Be sure to follow the modular structure and consistent style in Go and Swift.
-
----
-
-## Annotations
-
-- **Generated**: May 8, 2025
-- **Sources**: `/backend/*.go` code files + assumed iOS architecture
-- **Blockchain Layer**: Generic Ethereum-compatible (RPC-based), no smart contracts yet
-- **Verification Model**: Transparent hash validation, no ZKPs used
