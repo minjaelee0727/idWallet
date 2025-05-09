@@ -13,18 +13,6 @@ The architecture is built for **transparency, verifiability**, and **developer-f
 
 ---
 
-## Architecture
-
-```mermaid
-graph TD
-    iOS[iOS Wallet App] -->|issue / verify| API[Go REST API Server]
-    API --> DB[(SQLite DB)]
-    API --> Blockchain[Blockchain (e.g. Ethereum)]
-    Verifier -->|check credential| API
-```
-
----
-
 ## ✨ Features
 
 ### ✅ Cross-Platform Identity Flow
